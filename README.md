@@ -11,4 +11,4 @@
   
  ## Description
  
- This is a Back-end for Workout Finances app. Back-end should give SSR and store data about how much money should coach get from workouts.
+ This is a Back-end for Workout Finances app. Back-end should give store data about how much money should coach get from workouts.
