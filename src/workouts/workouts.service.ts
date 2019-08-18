@@ -19,7 +19,9 @@ export class WorkoutsService {
   }
 
   async remove({ idArray }: RemoveWorkoutDto) {
-    if (idArray.length === 0) return;
+    if (idArray.length === 0) {
+      return;
+    }
 
     if (idArray.length > 1) {
       await this.workoutModel.deleteMany({ _id: idArray }).exec();
