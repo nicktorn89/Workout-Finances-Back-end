@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions = {
-    origin: 'http://localhost:8080',
+    origin: 'http://count-training.surge.sh',
     credentials: true,
   };
 
