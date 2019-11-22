@@ -5,7 +5,6 @@ export class CreateWorkoutDto {
   readonly isPersonal: boolean;
   readonly isFree: boolean;
   readonly isJumps: boolean;
-  readonly location: Location; // TODO: Не уверен что это правильный интерфейс. Нужен ресерч
 }
 
 export class RemoveWorkoutDto {
@@ -19,6 +18,6 @@ export class EditWorkoutDto {
   readonly isPersonal: boolean;
   readonly isFree: boolean;
   readonly isJumps: boolean;
-  readonly location: Location; // TODO: Не уверен что это правильный интерфейс. Нужен ресерч
+  // tslint:disable-next-line
   readonly _id: string;
 }
