@@ -7,5 +7,5 @@ export interface Workout extends Document {
   readonly isPersonal: boolean;
   readonly isFree: boolean;
   readonly isJumps: boolean;
-  readonly location: Location; // TODO: Не уверен что это правильный интерфейс. Нужен ресерч
+  readonly location: Location;
 }
