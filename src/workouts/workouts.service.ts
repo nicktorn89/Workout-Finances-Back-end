@@ -36,26 +36,16 @@ export class WorkoutsService {
       throw new Error('date is not defined or not string');
     }
 
-    console.log('date in findWorkouts', date);
-
     const currentDate = new Date(date);
-    console.log('currentDate before moment', currentDate, new Date(date), date, typeof date);
-
     const currentMoment = moment(currentDate);
-
-    console.log('currentDate', currentDate);
 
     const startOfRange = currentDate.getDate() >= 15
       ? currentMoment.date(15).toDate()
       : currentMoment.startOf('month').toDate();
 
-    console.log('startOfRange', startOfRange);
-
     const endOfRange = currentDate.getDate() >= 15
       ? currentMoment.endOf('month').toDate()
       : currentMoment.date(15).toDate();
-
-    console.log('endOfRange', endOfRange);
 
     return await this.workoutModel.find({ date: { $gte: startOfRange, $lte: endOfRange } }).exec();
   }
