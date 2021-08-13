@@ -5,10 +5,14 @@ export class CreateWorkoutDto {
   readonly isPersonal: boolean;
   readonly isFree: boolean;
   readonly isJumps: boolean;
+
+  readonly periodDate: string;
 }
 
 export class RemoveWorkoutDto {
   readonly idArray: string[];
+
+  readonly periodDate: string;
 }
 
 export class EditWorkoutDto {
@@ -20,4 +24,6 @@ export class EditWorkoutDto {
   readonly isJumps: boolean;
   // tslint:disable-next-line
   readonly _id: string;
+
+  readonly periodDate: string;
 }
