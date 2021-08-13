@@ -13,6 +13,8 @@ export class WorkoutsController {
     try {
       const { periodDate } = req.query;
 
+      console.log('periodDate in query', periodDate);
+
       const foundedWorkouts = await this.workoutsService.findWorkouts(periodDate);
 
       return foundedWorkouts;

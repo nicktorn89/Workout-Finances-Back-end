@@ -36,7 +36,11 @@ export class WorkoutsService {
       throw new Error('date is not defined or not string');
     }
 
+    console.log('date in findWorkouts', date);
+
     const currentDate = new Date(date);
+    console.log('currentDate before moment', currentDate, new Date(date), date, typeof date);
+
     const currentMoment = moment(currentDate);
 
     console.log('currentDate', currentDate);
