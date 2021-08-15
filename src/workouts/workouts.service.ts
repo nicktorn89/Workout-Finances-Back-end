@@ -39,18 +39,17 @@ export class WorkoutsService {
     const currentDate = new Date(date);
     const currentMoment = moment(currentDate);
 
-    const startOfRangeMoment = currentDate.getDate() >= 15
-      ? currentMoment.date(15).hour(0).minute(0).second(0).millisecond(0)
+    const startOfRangeMoment = currentDate.getDate() > 15
+      ? currentMoment.date(16).hour(0).minute(0).second(0).millisecond(0)
       : currentMoment.startOf('month').hour(0).minute(0).second(0).millisecond(0);
 
-    const endOfRangeMoment = currentDate.getDate() >= 15
+    const startOfRange = startOfRangeMoment.toDate();
+
+    const endOfRangeMoment = currentDate.getDate() > 15
       ? currentMoment.endOf('month').hour(23).minute(59).second(59).millisecond(999)
       : currentMoment.date(15).hour(23).minute(59).second(59).millisecond(999);
 
-    const startOfRange = startOfRangeMoment.toDate();
     const endOfRange = endOfRangeMoment.toDate();
-
-    console.log('startOfRange', startOfRange, 'endOfRange', endOfRange);
 
     return await this.workoutModel.find({ date: { $gte: startOfRange, $lte: endOfRange } }).exec();
   }
